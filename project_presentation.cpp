@@ -46,8 +46,17 @@ void oneD_datum::setup(int n){
 }//setup()
 
 
-////////////////////////--------------------執行--------------------//////////////////////////////////
+////////////////////////--------------------執行--------------------//////////////////////////////
 int main(){
+    //可以用：
+    //oneD_datum name(n) 建立並輸入一個型別為oneD_datum,含n位的變數name
+    //.setup(n) 加入n個值
+    //.ave() 回傳平均值
+    //.stdev() 回傳標準差
+    //.print() 以修飾過的格式輸出結果
+    //.percentile(a) 回傳百分位數Pa
+    //.percentile_range(a,b) 回傳百分位距Pa-Pb
+    
     int n; 
     cin >> n;                               //sample Input: 5
     oneD_datum A(n);                        //sample Input: 6 5 4 3 1 
@@ -60,9 +69,6 @@ int main(){
                                             //       current average: 3.5
                                             //       current median: 3.5
                                             //       current standard deviation: 1.70783
-    cout << "Q3 - Q1 = "<< A.percentile_range(75,25);      //= Q3 - Q1 = a5 - a2 = 3 
-
-    //還可以用
-    //.ave() 回傳平均值
-    //.percentile(int pt) 回傳百分位數Ppt
+    cout << "Q3 - Q1 = "<< A.percentile_range(75,25)<<"\n";      //= Q3 - Q1 = a5 - a2 = 3 
+    cout << "P30 = " << A.percentile(30)<<"\n"; // = P30 = a2 = 2
 }

@@ -10,6 +10,10 @@ class oneD_datum{//一維數據處裡
         double standard_deviation; //標準差
 
     public:
+        double stdev(){ //standard_deviation.getter
+            return standard_deviation;
+        }//stdev()
+
         double ave(){ //average.getter
             return average;
         }//ave()
